@@ -1,0 +1,92 @@
+1. Technic 1: Element's attributes
+1. Locating using UI Element's ID
+<u>Common Syntax</u>: By.Id("<UI_Element_ID>")
+[Image: Giao diện Log in to your account và bảng Elements của trình duyệt web hiển thị thẻ input với id="username"]
+Ex: By.Id("username")
+BONUS: STATIC vs. DYNAMIC LOCATORS
+Dynamic Locator is the one which helps to catch more than one similar UI Elements having the same XPath syntax. By flexibly changing only the data but keep the syntax, we can leverage the power of Dynamic Locator.
+<u>Example:</u> //td[text()='<depart_station>']/following-sibling::td[text()='<arrive_station>']/..//a[contains(@href, 'Book')]
+<u>Notices:</u>
+Dynamic Locator can reduce significantly the number of code line for similar controls. Thus, reduce the pressure in the maintain phase later on.
+Use it wisely! It might lead to complex code.
+Design A (Bad)
+Lots of duplication code. Code is not reusable.
+Difficult to understand test script and business flow.
+Requires huge effort to update test scripts due to abundant duplicated code.
+Extremely hard to maintain when project grows big
+
+Design B (Good)
+Code is highly reused. Number of code lines is reduced 
+Requires medium/small effort to understand test script and business flow.
+If AUT changes, the fix needs to change in only one place.
+Improves greatly the scalability and maintainability of the project at any size.
+
+Linear Test Automation Framework also known as Record & Playback framework, tester records each step such as navigation, user input, or checkpoints, and then plays the script back automatically to conduct the test.
+Pros:
+Fastest way to generate test scripts.
+Don’t need to have knowledge about automation, programming skills.
+Help to track manual activities.
+Cons:
+Test scripts are not reusable, data is hardcoded.
+Maintaining recorded test script costs huge effort.
+
+Behavior Driven Development (BDD) Test Automation Framework allows automation of functional validations in easily readable and understandable format to Business Analysts, Developers, Testers, etc.
+Pros:
+Test scripts are written in a readable (gherkin) language. So, they can be used as document for the AUT.
+Does not necessarily require all the users to be acquainted with the programming language.
+Cons:
+Initial investment being very high.
+
+Hybrid Test Automation Framework is a combination of any of the previously mentioned frameworks. Thus, it leverages the advantages of some and mitigate the weaknesses of others.
+Pros:
+Highly flexible and adaptable to project needs.
+Combined all the strengths of various frameworks.
+Cons:
+Take time to evaluate since most of them usually come up with lots of features.
+Requires proficiency in programming language(s).
+
+Data Driven Test Automation Framework helps user segregate the test script logic and the test data from each other. Then, the test data can be stored in an external database such as: property files, xml files, excel files, text files, CSV files, ODBC repositories etc.
+Pros:
+It considerably reduces the total number of scripts required to cover all the possible combinations of test scenarios.
+Increases flexibility and maintainability.
+Cons:
+Requires an extra effort to come up with the test data sources and reading mechanisms.
+Requires proficiency in programming language(s).
+
+Keyword Driven Automation Framework keeps the certain set of code belonging to the test script into an external data file. These set of code are known as Keywords.
+Pros:
+Doesn’t require the user to possess scripting knowledge.
+Provides high code re-usability.
+Cons:
+The initial cost of setting up the framework is high. It is time-consuming and complex.
+Becomes complicated gradually as it grows and a number of new keywords are introduced.
+
+Library Architecture Test Automation Framework comes with the basic concept that is to determine the common steps and then group them into functions under a common library. Then, test script will call these functions whenever needed.
+Pros:
+Introduces a great degree of re-usability.
+High level of modularization which results in easier and cost efficient maintenance and also scalability.
+Cons:
+Test data is hardcoded.
+The framework becomes complex when more and more libraries are introduced.
+
+Module Based Test Automation Framework divides the entire "Application Under Test" into a number of logical and isolated modules. For each module, we create a separate and independent test script.
+Pros:
+Code is reusable.
+Cost for maintaining test script is low. If application is changed, the only affected module(s) need to be updated.
+Cons:
+Test data is hardcoded. Cannot use multiple dataset.
+Programming knowledge is required to set up the framework.
+
+TIPS FOR BEGINNERS
+Dos:
+Page object’s name should be short, meaningful and memorable. It should remind developer of AUT name.
+Each web page should have separated page object.
+Page object’s method should return page object or state.
+Page object should have different versions of a method due to different behaviors of AUT. (ex: successful login and failed login)
+Don’ts:
+Test case should avoid using directly WebDriver methods/objects. Instead, use POs’ methods.
+Don’t find Element until you need it.
+Don’t use hard Sleep. Instead, use WebDriver Wait or Element’s tricks.
+Don’t Repeat Yourself (DRY).
+Don’t place assertions in page objects’ methods. This is not a responsibility of page object.
+Avoid hardcoded values as much as possible.
