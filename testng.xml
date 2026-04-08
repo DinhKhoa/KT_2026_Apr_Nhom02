@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Railway Automated Test Suite">
-    <!-- Listener configuration to capture screenshots on failure -->
+<suite name="Railway Automated Test Suite" preserve-order="false">
     <listeners>
-        <listener class-name="testcases.TestListener" />
+        <!-- Thêm reporter mặc định để tự động xuất file emailable-report.html -->
+        <listener class-name="org.testng.reporters.EmailableReporter2" />
+        <listener class-name="common.TestListener" />
     </listeners>
 
-    <test name="Safe Railway Tests">
+    <test name="Safe Railway Tests" preserve-order="false">
         <classes>
             <class name="testcases.LoginTests" />
             <class name="testcases.RegisterTests" />

@@ -38,13 +38,18 @@ public abstract class GeneralPage {
     }
 
 
+    public String getPageTitle() {
+        return Constant.WEBDRIVER.getTitle();
+    }
+
     // Methods
     public void clickMenuTab(String tabName) {
         this.getMenuTab(tabName).click();
     }
 
     public String getWelcomeMessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(lblWelcomeMessage)).getText();
+        // Search for welcome message in the main content area instead of a specific hidden tag
+        return findElement(By.xpath("//div[@id='content']")).getText();
     }
 
     // Generic navigation to reduce repetitive methods

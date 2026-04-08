@@ -1,7 +1,7 @@
 package pageobjects;
 
 import common.Constant;
-import common.components.WebTable;
+import common.WebTable;
 import org.openqa.selenium.By;
 
 public class MyTicketPage extends GeneralPage {

@@ -1,14 +1,561 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>TestNG Report</title>
-<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>TestNG Report</title>
+    <style type="text/css">table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+        empty-cells: show
+    }
+
+    th, td {
+        border: 1px solid #009;
+        padding: .25em .5em
+    }
+
+    th {
+        vertical-align: bottom
+    }
+
+    td {
+        vertical-align: top
+    }
+
+    table a {
+        font-weight: bold
+    }
+
+    .stripe td {
+        background-color: #E6EBF9
+    }
+
+    .num {
+        text-align: right
+    }
+
+    .passedodd td {
+        background-color: #3F3
+    }
+
+    .passedeven td {
+        background-color: #0A0
+    }
+
+    .skippedodd td {
+        background-color: #DDD
+    }
+
+    .skippedeven td {
+        background-color: #CCC
+    }
+
+    .failedodd td, .attn {
+        background-color: #F33
+    }
+
+    .failedeven td, .stripe .attn {
+        background-color: #D00
+    }
+
+    .stacktrace {
+        white-space: pre;
+        font-family: monospace
+    }
+
+    .totop {
+        font-size: 85%;
+        text-align: center;
+        border-bottom: 2px solid #000
+    }
+
+    .invisible {
+        display: none
+    }</style>
 </head>
 <body>
 <table>
-<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+    <tr>
+        <th>Test</th>
+        <th># Passed</th>
+        <th># Skipped</th>
+        <th># Retried</th>
+        <th># Failed</th>
+        <th>Time (ms)</th>
+        <th>Included Groups</th>
+        <th>Excluded Groups</th>
+    </tr>
+    <tr>
+        <th colspan="8">Railway Automated Test Suite</th>
+    </tr>
+    <tr>
+        <td><a href="#t0">Safe Railway Tests</a></td>
+        <td class="num">4</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num attn">12</td>
+        <td class="num">149,090</td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead></table>
+<table id='summary'>
+    <thead>
+    <tr>
+        <th>Class</th>
+        <th>Method</th>
+        <th>Start</th>
+        <th>Time (ms)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th colspan="4">Railway Automated Test Suite</th>
+    </tr>
+    </tbody>
+    <tbody id="t0">
+    <tr>
+        <th colspan="4">Safe Railway Tests &#8212; failed</th>
+    </tr>
+    <tr class="failedeven">
+        <td rowspan="6">testcases.LoginTests</td>
+        <td><a href="#m0">TC01</a></td>
+        <td rowspan="1">1775660179608</td>
+        <td rowspan="1">5191</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m1">TC02</a></td>
+        <td rowspan="1">1775660186146</td>
+        <td rowspan="1">5310</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m2">TC03</a></td>
+        <td rowspan="1">1775660192543</td>
+        <td rowspan="1">4138</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m3">TC05</a></td>
+        <td rowspan="1">1775660203458</td>
+        <td rowspan="1">7909</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m4">TC06</a></td>
+        <td rowspan="1">1775660212669</td>
+        <td rowspan="1">15238</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m5">TC08</a></td>
+        <td rowspan="1">1775660236454</td>
+        <td rowspan="1">16839</td>
+    </tr>
+    <tr class="failedodd">
+        <td rowspan="3">testcases.PasswordTests</td>
+        <td><a href="#m6">TC09</a></td>
+        <td rowspan="1">1775660254584</td>
+        <td rowspan="1">8672</td>
+    </tr>
+    <tr class="failedodd">
+        <td><a href="#m7">TC12</a></td>
+        <td rowspan="1">1775660277174</td>
+        <td rowspan="1">10921</td>
+    </tr>
+    <tr class="failedodd">
+        <td><a href="#m8">TC13</a></td>
+        <td rowspan="1">1775660288805</td>
+        <td rowspan="1">7945</td>
+    </tr>
+    <tr class="failedeven">
+        <td rowspan="2">testcases.RegisterTests</td>
+        <td><a href="#m9">TC07</a></td>
+        <td rowspan="1">1775660229181</td>
+        <td rowspan="1">6148</td>
+    </tr>
+    <tr class="failedeven">
+        <td><a href="#m10">TC11</a></td>
+        <td rowspan="1">1775660270607</td>
+        <td rowspan="1">5477</td>
+    </tr>
+    <tr class="failedodd">
+        <td rowspan="1">testcases.TicketManageTests</td>
+        <td><a href="#m11">TC15</a></td>
+        <td rowspan="1">1775660308709</td>
+        <td rowspan="1">7207</td>
+    </tr>
+    <tr>
+        <th colspan="4">Safe Railway Tests &#8212; passed</th>
+    </tr>
+    <tr class="passedeven">
+        <td rowspan="1">testcases.LoginTests</td>
+        <td><a href="#m12">TC04</a></td>
+        <td rowspan="1">1775660197763</td>
+        <td rowspan="1">4915</td>
+    </tr>
+    <tr class="passedodd">
+        <td rowspan="1">testcases.RegisterTests</td>
+        <td><a href="#m13">TC10</a></td>
+        <td rowspan="1">1775660264447</td>
+        <td rowspan="1">5339</td>
+    </tr>
+    <tr class="passedeven">
+        <td rowspan="2">testcases.TicketManageTests</td>
+        <td><a href="#m14">TC14</a></td>
+        <td rowspan="1">1775660297466</td>
+        <td rowspan="1">10561</td>
+    </tr>
+    <tr class="passedeven">
+        <td><a href="#m15">TC16</a></td>
+        <td rowspan="1">1775660316864</td>
+        <td rowspan="1">9594</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Safe Railway Tests</h2>
+<h3 id="m0">testcases.LoginTests#TC01</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC01_20260408_215625.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Welcome message not found in page content. Actual content:
+                Welcome to Safe Railway
+                With Safe Railway&apos;s service, you can:
+                Look up train timetable to prepare for your trip
+                Check for ticket price to find what suits your need
+                Book your ticket online in a few easy steps
+                And a lot more expected [true] but found [false]
+                at testcases.LoginTests.TC01(LoginTests.java:29)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 32 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testcases.LoginTests#TC02</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC02_20260408_215631.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Error message is not displayed as expected expected [There
+                was a problem with your login and/or errors exist in your form. ] but found [There was a problem with
+                your login and/or errors exist in your form.]
+                at testcases.LoginTests.TC02(LoginTests.java:47)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testcases.LoginTests#TC03</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC03_20260408_215637.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Error message is not displayed as expected expected [There
+                was a problem with your login and/or errors exist in your form.] but found [Invalid username or
+                password. Please try again.]
+                at testcases.LoginTests.TC03(LoginTests.java:66)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testcases.LoginTests#TC05</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC05_20260408_215651.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Error message incorrect expected [You have used 4 out of 5
+                login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found
+                [Invalid username or password. Please try again.]
+                at testcases.LoginTests.TC05(LoginTests.java:98)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testcases.LoginTests#TC06</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC06_20260408_215708.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Logout tab is not displayed expected [true] but found
+                [false]
+                at testcases.LoginTests.TC06(LoginTests.java:116)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 32 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testcases.LoginTests#TC08</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC08_20260408_215733.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: User was able to login without activating the account!
+                (Security activation bypass)
+                at testcases.LoginTests.TC08(LoginTests.java:146)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 30 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testcases.PasswordTests#TC09</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC09_20260408_215743.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Message is not displayed as expected expected [Your
+                password has been updated] but found [Your password has been updated!]
+                at testcases.PasswordTests.TC09(PasswordTests.java:36)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testcases.PasswordTests#TC12</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC12_20260408_215808.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Error page displays instead of success message
+                at testcases.PasswordTests.TC12(PasswordTests.java:57)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 30 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testcases.PasswordTests#TC13</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC13_20260408_215816.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Error page displays instead of success message
+                at testcases.PasswordTests.TC13(PasswordTests.java:94)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 30 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">testcases.RegisterTests#TC07</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC07_20260408_215715.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Success message is not displayed as expected expected
+                [Thank you for registering your account] but found [Registration Confirmed! You can now log in to the
+                site.]
+                at testcases.RegisterTests.TC07(RegisterTests.java:28)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">testcases.RegisterTests#TC11</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC11_20260408_215756.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Password error incorrect expected [Invalid password
+                length.] but found [Invalid password length]
+                at testcases.RegisterTests.TC11(RegisterTests.java:73)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">testcases.TicketManageTests#TC15</h3>
+<table class="result">
+    <tr>
+        <th>Messages</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="messages"><br><img height='400' src='screenshots/TC15_20260408_215836.png' width='600'/><br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Exception</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="stacktrace">java.lang.AssertionError: Depart station is incorrect on Book Ticket page expected
+                [Sài Gòn] but found [Huế]
+                at testcases.TicketManageTests.TC15(TicketManageTests.java:96)
+                at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+                ... Removed 34 stack frames
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">testcases.LoginTests#TC04</h3>
+<table class="result">
+    <tr>
+        <th class="invisible"/>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">testcases.RegisterTests#TC10</h3>
+<table class="result">
+    <tr>
+        <th class="invisible"/>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">testcases.TicketManageTests#TC14</h3>
+<table class="result">
+    <tr>
+        <th class="invisible"/>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">testcases.TicketManageTests#TC16</h3>
+<table class="result">
+    <tr>
+        <th class="invisible"/>
+    </tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

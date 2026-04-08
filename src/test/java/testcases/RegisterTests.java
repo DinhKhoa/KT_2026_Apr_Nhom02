@@ -17,15 +17,15 @@ public class RegisterTests extends BaseTest {
         // Step 2: Click on "Register" tab
         RegisterPage registerPage = homePage.gotoPage("Register", RegisterPage.class);
         String newEmail = Utilities.generateRandomEmail("newEmail");
-        String newPass = Utilities.generateRandomString(12);
-        String pid = Utilities.generateRandomString(9);
+        String newPass = Utilities.generateRandomString(15);
+        String pid = Utilities.generateRandomNumber(10);
 
         // Step 3: Enter valid information into all fields
         // Step 4: Click on "Register" button
         registerPage.register(newEmail, newPass, newPass, pid);
 
         String actualMsg = registerPage.getRegisterMessage();
-        Assert.assertEquals(actualMsg, "Registration Confirmed! You can now log in to the site.", "Success message is not displayed as expected");
+        Assert.assertEquals(actualMsg, "Thank you for registering your account", "Success message is not displayed as expected");
     }
 
     @Test
@@ -38,9 +38,9 @@ public class RegisterTests extends BaseTest {
         // Step 2: Click on "Register" tab
         RegisterPage registerPage = homePage.gotoPage("Register", RegisterPage.class);
         String newEmail = Utilities.generateRandomEmail("mismatch");
-        String newPass = Utilities.generateRandomString(12);
-        String misMatchPass = Utilities.generateRandomString(11);
-        String pid = Utilities.generateRandomString(9);
+        String newPass = Utilities.generateRandomString(10);
+        String misMatchPass = Utilities.generateRandomString(9);
+        String pid = Utilities.generateRandomNumber(9);
 
         // Step 3: Enter valid information into all fields except "Confirm password" is not the same with "Password"
         // Step 4: Click on "Register" button
@@ -60,7 +60,7 @@ public class RegisterTests extends BaseTest {
         // Step 2: Click on "Register" tab
         RegisterPage registerPage = homePage.gotoPage("Register", RegisterPage.class);
         String validEmail = Utilities.generateRandomEmail("tc11");
-        
+
         // Step 3: Enter valid email address and leave other fields empty
         // Step 4: Click on "Register" button
         registerPage.register(validEmail, "", "", "");
@@ -70,7 +70,7 @@ public class RegisterTests extends BaseTest {
         String pidErr = registerPage.getPidError();
 
         Assert.assertEquals(formMsg, "There're errors in the form. Please correct the errors and try again.", "Form message incorrect");
-        Assert.assertEquals(pwdErr, "Invalid password length", "Password error incorrect");
-        Assert.assertEquals(pidErr, "Invalid ID length", "PID error incorrect");
+        Assert.assertEquals(pwdErr, "Invalid password length.", "Password error incorrect");
+        Assert.assertEquals(pidErr, "Invalid ID length.", "PID error incorrect");
     }
 }

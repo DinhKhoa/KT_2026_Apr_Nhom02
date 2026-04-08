@@ -12,6 +12,7 @@
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     </properties>
 
     <dependencies>
@@ -27,7 +28,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.12.0</version>
-            <scope>test</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
@@ -64,15 +64,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>testcases.TestListener</value>
-                        </property>
-                    </properties>
+                    <reportsDirectory>${project.basedir}/test-output</reportsDirectory>
                 </configuration>
             </plugin>
         </plugins>

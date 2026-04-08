@@ -1,7 +1,6 @@
 package pageobjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class RegisterPage extends GeneralPage {
 
@@ -11,8 +10,7 @@ public class RegisterPage extends GeneralPage {
     private final By txtConfirmPassword = By.id("confirmPassword");
     private final By txtPid = By.id("pid");
     private final By btnRegister = By.xpath("//input[@type='submit' and @value='Register']");
-    private final By lblRegisterMessage = By.xpath(
-            "//div[@id='content']//p[@class='message error'] | //div[@id='content']//p[@class='message success']");
+    private final By lblRegisterMessage = By.xpath("//div[@id='content']/p[last()]");
     private final By lblPasswordError = By.xpath("//label[@for='password' and @class='validation-error']");
     private final By lblPidError = By.xpath("//label[@for='pid' and @class='validation-error']");
 
@@ -36,10 +34,10 @@ public class RegisterPage extends GeneralPage {
     }
 
     public String getRegisterMessage() {
-        String msg = getText(lblRegisterMessage);
-        if (msg == null || msg.isEmpty()) {
+        try {
+            return getText(lblRegisterMessage);
+        } catch (Exception e) {
             return getText(By.id("content"));
         }
-        return msg;
     }
 }

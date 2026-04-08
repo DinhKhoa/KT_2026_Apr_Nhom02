@@ -25,18 +25,23 @@ public class TicketManageTests extends BaseTest {
 
         // Step 4: Select a "Depart date" from the list
         String departDate = bookTicketPage.selectRandom("Date");
-        // Step 5: Select "Sài Gòn" for "Depart from" and "Nha Trang" for "Arrive at". (Mocked via random selection to match updated test)
-        String departFrom = bookTicketPage.selectRandom("Depart From");
-        String arriveAt = bookTicketPage.selectRandom("Arrive At");
-        // Step 6: Select "Soft bed with air conditioner" for "Seat type" (Mocked via random selection)
+        // Step 5: Select "Sài Gòn" for "Depart from" and "Nha Trang" for "Arrive at" sequentially
+        String departFrom = bookTicketPage.selectStationCustom("Depart From", "Sài Gòn");
+        Utilities.delay(300);
+        String arriveAt = bookTicketPage.selectStationCustom("Arrive At", "Nha Trang");
+        // Step 6: Select "Soft bed with air conditioner" for "Seat type"
         String seatType = bookTicketPage.selectRandom("Seat Type");
         // Step 7: Select "1" for "Ticket amount"
         String amount = "1";
+
+        Utilities.delay(500);
 
         // Step 8: Click on "Book ticket" button
         bookTicketPage.clickBtnBookTicket();
 
         String ticketId = Utilities.getIDFromURL(Constant.WEBDRIVER.getCurrentUrl());
+        System.out.println("Depart from: " + departFrom);
+        System.out.println("Arrive at: " + arriveAt);
         System.out.println("Booked Ticket ID: " + ticketId);
 
         String successMsg = bookTicketPage.getSuccessMessage();
@@ -47,13 +52,17 @@ public class TicketManageTests extends BaseTest {
         Assert.assertEquals(bookTicketPage.getTicketFieldValue("Seat Type"), seatType, "Seat type wrong");
         Assert.assertEquals(bookTicketPage.getTicketFieldValue("Amount"), amount, "Amount wrong");
         Assert.assertEquals(bookTicketPage.getTicketFieldValue("Depart Date"), departDate, "Depart date wrong");
+
+        // Cancel to be able to book other tickets without the 10-ticket limit
+        MyTicketPage myTicketPage = bookTicketPage.gotoPage("My ticket", MyTicketPage.class);
+        myTicketPage.cancelTicket(ticketId);
+        Assert.assertFalse(myTicketPage.isTicketExist(ticketId), "The ticket with ID " + ticketId + " was not cancelled correctly");
     }
 
     @Test
     public void TC15() {
-        System.out.println(
-                "TC15 - User can open 'Book ticket' page by clicking on 'Book ticket' link in 'Train timetable' page");
-        // Pre-condition: Create and activate a new account (Mocked via existing account)
+        System.out.println("TC15 - User can open 'Book ticket' page by clicking on 'Book ticket' link in 'Train timetable' page");
+        // Pre-condition: Create and activate a new account
 
         // Step 1: Navigate to QA Railway Website
         HomePage homePage = new HomePage();
@@ -66,14 +75,15 @@ public class TicketManageTests extends BaseTest {
         // Step 3: Click on "Timetable" tab
         TimetablePage timetablePage = homePage.gotoPage("Timetable", TimetablePage.class);
 
-        // Step 4: Click on a "book ticket" link for Huế to Sài Gòn (or fallback to random)
+        // Step 4: Click on a "book ticket" link for Huế to Sài Gòn
         String[] route = timetablePage.clickBookTicketOrDefaultRandom("Huế", "Sài Gòn");
         String expectedDepart = route[0];
         String expectedArrive = route[1];
+        Utilities.delay(500);
 
         BookTicketPage bookTicketPage = new BookTicketPage();
 
-        common.Utilities.delay(1000);
+        Utilities.delay(1000);
 
         String actualDepart = bookTicketPage.getSelectedDepartFrom();
         String actualArrive = bookTicketPage.getSelectedArriveAt();
@@ -118,7 +128,6 @@ public class TicketManageTests extends BaseTest {
         // Step 6: Click on "OK" button on Confirmation message "Are you sure?"
         myTicketPage.cancelTicket(ticketId);
 
-        Assert.assertFalse(myTicketPage.isTicketExist(ticketId),
-                "The ticket with ID " + ticketId + " was not cancelled correctly");
+        Assert.assertFalse(myTicketPage.isTicketExist(ticketId), "The ticket with ID " + ticketId + " was not cancelled correctly");
     }
 }

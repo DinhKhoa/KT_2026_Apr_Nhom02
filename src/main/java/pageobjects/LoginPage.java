@@ -29,7 +29,11 @@ public class LoginPage extends GeneralPage {
 
     // Methods
     public boolean isLoginFormDisplayed() {
-        return findElement(_btnLogin).isDisplayed();
+        try {
+            return getBtnLogin().isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public HomePage login(String username, String password) {

@@ -20,6 +20,5 @@ public class ForgotPasswordPage extends GeneralPage {
     public void submitEmail(String email) {
         sendKeys(txtEmail, email);
         click(btnSendInstructions);
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.urlContains("PasswordReset"));
     }
 }

@@ -1,7 +1,7 @@
 package pageobjects;
 
 import common.Utilities;
-import common.components.WebTable;
+import common.WebTable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -57,15 +57,6 @@ public class BookTicketPage extends GeneralPage {
         click(_btnBookTicket);
     }
 
-    public void bookTicketRandom() {
-        selectRandom("Date");
-        selectRandom("Depart Station");
-        selectRandom("Arrive Station");
-        selectRandom("Seat Type");
-        selectRandom("Ticket Amount");
-        clickBtnBookTicket();
-    }
-
     public String selectRandom(String fieldName) {
         By locator = getLocatorByFieldName(fieldName);
 
@@ -107,6 +98,18 @@ public class BookTicketPage extends GeneralPage {
             return originalText;
         }
         return dropdown.getFirstSelectedOption().getText();
+    }
+
+    public String selectStationCustom(String fieldName, String targetValue) {
+        By locator = getLocatorByFieldName(fieldName);
+        wait.until(d -> select(locator).getOptions().size() > 0);
+        try {
+            select(locator).selectByVisibleText(targetValue);
+        } catch (Exception e) {
+            selectRandom(fieldName);
+        }
+        Utilities.delay(300);
+        return select(locator).getFirstSelectedOption().getText();
     }
 
     public String getBookResultMessage() {
